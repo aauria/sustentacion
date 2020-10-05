@@ -1,0 +1,15 @@
+{% extends "Unidad_Educativa.html" %}
+{% block title %} Retiro{% endblock %}
+{% block background %}{% load static %}{% static 'img/about-bg.jpg' %}{% endblock %}
+
+
+{% block content %}
+    <h2> Crear Autorización de retiro del Estudiante</h2>
+    <div class="container">
+    <form method="Post">
+         {% csrf_token %}
+         {{ form.as_p }}
+        <input type = "submit" value = "Crear retiro"/>
+    </form>
+    </div>
+{% endblock %}

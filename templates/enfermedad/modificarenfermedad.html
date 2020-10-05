@@ -1,0 +1,15 @@
+[23:45, 29/9/2020] Raquelita Loor: {% extends "Unidad_Educativa.html" %}
+{% block title %} Modificar Enfermedad {% endblock %}
+{% block background %}{% load static %}{% static 'img/Alumnos.jpeg' %}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+    <h2> Modificar Enfermedad</h2>
+    <form method="Post">
+         {% csrf_token %}
+         {{ form.as_p }}
+        <input type = "submit" value = "Modificar Enfermedad"/>
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "Unidad_Educativa.html" %}
+{% block title %} Estudiantes{% endblock %}
+{% block background %}{% load static %}{% static 'img/ESCUELA ELOY ALFARO JPEG.jpeg.jpeg' %}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+    <h2> Crear Estudiante</h2>
+    <form method="Post">
+         {% csrf_token %}
+         {{ form.as_p }}
+        <input type = "submit" value = "Crear Estudiante"/>
+    </form>
+    </div>
+{% endblock %}

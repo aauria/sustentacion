@@ -1,0 +1,15 @@
+{% extends "Unidad_Educativa.html" %}
+{% block title %} Modificar Retiro {% endblock %}
+{% block background %}{% load static %}{% static 'img/Alumnos.jpeg' %}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+    <h2> Modificar Autorización de Retiro del estudiante</h2>
+    <form method="Post">
+         {% csrf_token %}
+         {{ form.as_p }}
+        <input type = "submit" value = "Modificar retiro"/>
+    </form>
+    </div>
+{% endblock %}

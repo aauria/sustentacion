@@ -1,0 +1,50 @@
+{% extends "Unidad_Educativa.html" %}
+
+{% block background %}{% load static %}{% static 'img/contact-bg.jpg' %}{% endblock %}
+
+{% block content %}
+      <div class="container">
+        <div class="col-md-8" style="margin-top: 70px;">
+
+            <h2> Autorización de Retiro del Estudiante </h2>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>cedula</th>
+                        <th>Direccion</th>
+                        <th>N.de Telefono</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for retiro in retiro_list %}
+                        <tr>
+                            <td>{{ retiro.Nombre }}</td>
+                            <td>{{ retiro.Apellido }}</td>
+                            <td>{{ retiro.Edad }}</td>
+                            <td>{{ retiro.Direccion }}</td>
+                            <td>{{ retiro.Cedula }}</td>
+                            <td>{{ retiro.N_de_Telefono }}</td>
+
+                            <td><a class="nav-link" href="{% url 'modificarretiro' retiro.id  %}">Editar</a></td>
+                            <td><a class="nav-link" href="{% url 'eliminarretiro' retiro.id %}">Eliminar</a></td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <a class="nav-link" href="{% url 'crearretiro' %}">Crear retiro</a>
+
+
+        </div>
+    </div>
+{% endblock %}

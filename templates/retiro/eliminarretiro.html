@@ -1,0 +1,13 @@
+{{% extends "Unidad_Educativa.html" %}
+{% block title %} Eliminar Retiro{% endblock %}
+
+{% block background %}{% load static %}{% static 'img/Alumnos.jpeg' %}{% endblock %}
+
+{% block content %}
+    <h2> Eliminar Retiro</h2>
+    <form method="Post">
+         {% csrf_token %}
+         {{ RetiroForm.as_p }}
+        <input type = "submit" value = "Eliminar Retiro"/>
+    </form>
+{% endblock %}

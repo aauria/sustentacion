@@ -1,0 +1,79 @@
+{% extends "Unidad_Educativa.html" %}
+{% block background %}{% load static %}{% static 'img/ESCUELA ELOY ALFARO JPEG.jpeg' %}{% endblock %}
+
+{% block content %}
+      <div class="container" style="max-width: 1500px;">
+        <div class="table" style="margin-top: 70px;">
+
+            <h2> Familias  </h2>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nombre Madre</th>
+                        <th>Nombre Padre</th>
+                        <th>Apellido Padre</th>
+                        <th>Apellido Madre</th>
+                        <th>Ocupacion Madre</th>
+                        <th>Ocupacion Padre</th>
+                        <th>Lugar de Trabajo Padre</th>
+                        <th>Lugar de Trabajo  Madre</th>
+                        <th>Estado Civil Madre</th>
+                        <th>Estado Civil Padre</th>
+                        <th>Vive con el Niño Padre</th>
+                        <th>Vive con el Niño Madre</th>
+                        <th>Telefono Madre</th>
+                        <th>Telefono Padre</th>
+                        <th>Direccion Madre</th>
+                        <th>Direccion Padre</th>
+                        <th>Instruccion Madre</th>
+                        <th>Instruccion Padre</th>
+                        <th>Tutor/a</th>
+                        <th>Estudiante</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for familia in familia_list %}
+                        <tr>
+                            <td>{{ familia.Nombre_Madre }}</td>
+                            <td>{{ familia.Nombre_Padre}}</td>
+                            <td>{{ familia.Apellido_Padre }}</td>
+                            <td>{{ familia.Apellido_Madre}}</td>
+                            <td>{{ familia.Ocupacion_Madre }}</td>
+                            <td>{{ familia.Ocupacion_Padre}}</td>
+                            <td>{{ familia.Trabaja_Donde_Padre}}</td>
+                            <td>{{ familia.Trabaja_Donde_Madre}}</td>
+                            <td>{{ familia.Estado_Civil_Madre }}</td>
+                            <td>{{ familia.Estado_Civil_Padre}}</td>
+                            <td>{{ familia.Vive_con_el_Niño_Padre }}</td>
+                            <td>{{ familia.Vive_con_el_Niño_Madre}}</td>
+                            <td>{{ familia.Telefonos_Madre }}</td>
+                            <td>{{ familia.Telefonos_Padre}}</td>
+                            <td>{{ familia.Direccion_Madre}}</td>
+                            <td>{{ familia.Direccion_Padre}}</td>
+                            <td>{{ familia.Instruccion_Madre}}</td>
+                            <td>{{ familia.Instruccion_Padre}}</td>
+                            <td>{{ familia.Tutor}}</td>
+                            <td>{{ familia.Estudiante}}</td>
+
+
+                            <td><a class="nav-link" href="{% url 'modificarfamilia' familia.id  %}">Editar</a></td>
+                            <td><a class="nav-link" href="{% url 'eliminarfamilia' familia.id %}">Eliminar</a></td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <a class="nav-link" href="{% url 'crearfamilia' %}">Crear Familia</a>
+
+
+        </div>
+    </div>
+{% endblock %}

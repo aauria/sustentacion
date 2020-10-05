@@ -1,0 +1,13 @@
+{% extends "Unidad_Educativa.html" %}
+{% block title %} Eliminar Curso{% endblock %}
+
+{% block background %}{% load static %}{% static 'img/contact-bg.jpg' %}{% endblock %}
+
+{% block content %}
+    <h2> Eliminar Curso</h2>
+    <form method="Post">
+         {% csrf_token %}
+         {{ cursoform.as_p }}
+        <input type = "submit" value = "Eliminar Curso"/>
+    </form>
+{% endblock %}

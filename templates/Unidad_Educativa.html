@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>UEGEA</title>
+
+    <!-- Estilos y fuente  -->
+    {% load static %}
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/clean-blog.min.css' %}" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<!-- Navegación -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="{% url "portada" %}">Unidad Educativa Gral. Eloy Alfaro</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menú
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+      <div class="btn-group">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Matricula
+  </button>
+  <div class="dropdown-menu">
+    <a class="nav-link" href="{% url "estudiantes" %}">Estudiante</a>
+      <a class="nav-link" href="{% url "retiro" %}">Retiro</a>
+      <a class="nav-link" href="{% url "enfermedades" %}">Enfermedad</a>
+      <a class="nav-link" href="{% url "familia" %}">Familia</a>
+      <a class="nav-link" href="{% url "curso" %}">Curso</a>
+      <a class="nav-link" href="{% url "consulta_usuario" %}">Usuario</a>
+      <a class="nav-link" href="{% url "consulta_grupo" %}">Grupo</a>
+      </div>
+</div>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "portada" %}">Portada</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "MyV" %}">Unidad Educativa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "logout" %}">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Cabecera -->
+<header class="masthead" style="background-image: url('{% block background %} {% endblock %}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Unidad Educativa Gral. Eloy Alfaro</h1>
+                    <span class="subheading">Escuela Fiscal N.336</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Contenido -->
+{% block content %} {% endblock %}
+
+<!-- Pié de página -->
+<footer>
+
+</footer>
+
+<!-- Bootstrap y Javascripts -->
+{% load static %}
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/clean-blog.min.js' %}"></script>
+
+</body>
+
+</html>

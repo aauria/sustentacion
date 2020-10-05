@@ -1,0 +1,59 @@
+{% extends "Unidad_Educativa.html" %}
+{% block background %}{% load static %}{% static 'img/ESCUELA ELOY ALFARO JPEG.jpeg' %}{% endblock %}
+
+{% block content %}
+      <div class="container">
+        <div class="col-md-8" style="margin-top: 70px;">
+
+            <h2> Estudiantes </h2>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Email</th>
+                        <th>Sexo</th>
+                        <th>Curso</th>
+                        <th>Direccion</th>
+                        <th>Cedula</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>N.de Telefono</th>
+                        <th>Codigo Matricula</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for estudiante in estudiante_list %}
+                        <tr>
+                            <td>{{ estudiante.Nombre }}</td>
+                            <td>{{ estudiante.Apellido }}</td>
+                            <td>{{ estudiante.Edad }}</td>
+                            <td>{{ estudiante.Email }}</td>
+                            <td>{{ estudiante.Sexo }}</td>
+                            <td>{{ estudiante.Curso.nivel }} {{ estudiante.Curso.paralelo }}</td>
+                             <td>{{ estudiante.Direccion }}</td>
+                            <td>{{ estudiante.Cedula }}</td>
+                            <td>{{ estudiante.Fecha_Nacimiento }}</td>
+                            <td>{{ estudiante.N_de_Telefono}}</td>
+                            <td>{{ estudiante.Codigo_Matricula}}</td>
+
+                            <td><a class="nav-link" href="{% url 'modificarestudiante' estudiante.id  %}">Editar</a></td>
+                            <td><a class="nav-link" href="{% url 'eliminarestudiante' estudiante.id %}">Eliminar</a></td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <a class="nav-link" href="{% url 'crearestudiante' %}">Crear Nuevo Estudiante</a>
+
+
+        </div>
+    </div>
+{% endblock %}

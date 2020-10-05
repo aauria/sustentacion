@@ -1,0 +1,13 @@
+{% extends "Unidad_Educativa.html" %}
+{% block title %} Modificar Estudiante {% endblock %}
+{% block background %}{% load static %}{% static 'img/Alumnos.jpeg' %}{% endblock %}
+
+
+{% block content %}
+    <h2> Modificar Estudiante</h2>
+    <form method="Post">
+         {% csrf_token %}
+         {{ form.as_p }}
+        <input type = "submit" value = "Modificar Estudiante"/>
+    </form>
+{% endblock %}

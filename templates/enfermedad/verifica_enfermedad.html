@@ -1,0 +1,10 @@
+{% extends 'Unidad_Educativa.html' %}
+{% block title %} Verifica Enfermedades {% endblock %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <h1> Desea Eliminar al enfermedad {{ enfermedad.Tipo }}?</h1>
+  <button type="submit">Confirmar</button>
+  <a href="{% url 'enfermedades' %}" >Cancelar</a>
+</form>
+{% endblock %}

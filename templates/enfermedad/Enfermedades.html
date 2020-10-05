@@ -1,0 +1,44 @@
+{% extends "Unidad_Educativa.html" %}
+
+{% block background %}{% load static %}{% static 'img/about-bg.jpg' %}{% endblock %}
+
+{% block content %}
+        <div class="container" style="max-width: 1500px;">
+        <div class="table" style="margin-top: 70px;">
+
+            <h2> Enfermedad </h2>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Explique</th>
+                        <th>Estudiante</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for enfermedad in enfermedad_list %}
+                        <tr>
+                            <td>{{ enfermedad.Tipo}}</td>
+                            <td>{{ enfermedad.Explique }}</td>
+                            <td>{{ enfermedad.Estudiante}}</td>
+
+                            <td><a class="nav-link" href="{% url 'modificarenfermedad' enfermedad.id  %}">Editar</a></td>
+                            <td><a class="nav-link" href="{% url 'eliminarenfermedad' enfermedad.id %}">Eliminar</a></td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <a class="nav-link" href="{% url 'crearenfermedad' %}">Crear Estado de Enfermadad</a>
+
+
+        </div>
+    </div>
+{% endblock %}

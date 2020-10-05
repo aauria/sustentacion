@@ -1,0 +1,18 @@
+{% extends "Unidad_Educativa.html" %}
+{% block title %} Usuario{% endblock %}
+{% block background %}{% load static %}{% static 'img/ESCUELA ELOY ALFARO JPEG.jpeg.jpeg' %}{% endblock %}
+
+
+{% block content %}
+    <h1> CREAR USUARIO </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit", class="badge-light">Guardar</button>
+    </form>
+{% endblock %}
+
+
+
+
+

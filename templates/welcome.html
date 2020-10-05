@@ -1,0 +1,18 @@
+{% extends "Unidad_Educativa.html" %}
+{% block background %}{% load static %}{% static 'img/home-bg.jpg' %}{% endblock %}
+{% block content %}
+<h2></h2>
+<p>
+    {% if user %}
+    Bienvenido <b>{{request.user.username}}</b>,
+        {% for grupo in request.user.groups.all %}
+         <span class="badge badge-primary">{{ grupo }}</span>
+        {% endfor %}
+
+     {% endif %}
+
+    esta página es exclusiva para usuarios registrados.
+</p>
+
+<hr />
+{% endblock %}
